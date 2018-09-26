@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SavageAbilities from '../component/SavageAbilities';
 import SavageSkills from '../component/SavageSkills';
+import SavageDerivedStats from '../component/SavageDerivedStats';
 
-class SavageSheet extends React {
+export default class SavageSheet extends Component {
 
+    render() {
+        return (
+            <ul className='sheetColumns'>
+                <li>
+                    <SavageAbilities />
+                    <SavageDerivedStats />
+                </li>
+                <li>
+                    <SavageSkills />
+                </li>
+            </ul>
+        );
+    }
 }
-
-export default SavageSheet;
