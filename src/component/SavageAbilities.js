@@ -6,11 +6,11 @@ export default class SavageAbilities extends Component {
             <div>
                 <h2>Attributes</h2>
                 <div>
-                    <h4>Agility: </h4>
-                    <h4>Smarts: </h4>
-                    <h4>Spirit: </h4>
-                    <h4>Strength: </h4>
-                    <h4>Vigor: </h4>
+                    <div>Agility: </div>
+                    <div>Smarts: </div>
+                    <div>Spirit: </div>
+                    <div>Strength: </div>
+                    <div>Vigor: </div>
                 </div>
             </div>
         );

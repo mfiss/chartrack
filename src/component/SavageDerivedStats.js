@@ -6,10 +6,10 @@ export default class SavageDerivedStats extends Component {
             <div>
                 <h2>Derived Stats</h2>
                 <div>
-                    <h4>Pace: </h4>
-                    <h4>Parry: </h4>
-                    <h4>Toughness: </h4>
-                    <h4>Charisma: </h4>
+                    <div>Pace: </div>
+                    <div>Parry: </div>
+                    <div>Toughness: </div>
+                    <div>Charisma: </div>
                 </div>
             </div>
         );
