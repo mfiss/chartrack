@@ -13,6 +13,7 @@ export default class SavageSkills extends Component {
                 gambling: 8,
                 healing: 10,
                 intimidation: 12,
+                investigation: 4,
             }
         }
 
@@ -40,6 +41,7 @@ export default class SavageSkills extends Component {
                 <div>Gambling (Sma): <input type='text' name='gambling' onChange={this.updateSkill} value={this.state.skills.gambling} /> </div>
                 <div>Healing (Sma): <input type='text' name='healing' onChange={this.updateSkill} value={this.state.skills.healing} /> </div>
                 <div>Intimidation (Spi): <input type='text' name='intimidation' onChange={this.updateSkill} value={this.state.skills.intimidation} /> </div>
+                <div>Investigation (Sma): <input type='text' name='investigation' onChange={this.updateSkill} value={this.state.skills.investigation} /> </div>
             </div>
         );
     }
