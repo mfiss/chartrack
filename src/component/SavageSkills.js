@@ -34,14 +34,23 @@ export default class SavageSkills extends Component {
         return (
             <div>
                 <h2>Skills</h2>
-                <div>Boating (Agi): <input type='text' name='boating' onChange={this.updateSkill} value={this.state.skills.boating} /> </div>
-                <div>Climbing (Str): <input type='text' name='climbing' onChange={this.updateSkill} value={this.state.skills.climbing} /> </div>
-                <div>Driving (Agi): <input type='text' name='driving' onChange={this.updateSkill} value={this.state.skills.driving} /> </div>
-                <div>Fighting (Agi): <input type='text' name='fighting' onChange={this.updateSkill} value={this.state.skills.fighting} /> </div>
-                <div>Gambling (Sma): <input type='text' name='gambling' onChange={this.updateSkill} value={this.state.skills.gambling} /> </div>
-                <div>Healing (Sma): <input type='text' name='healing' onChange={this.updateSkill} value={this.state.skills.healing} /> </div>
-                <div>Intimidation (Spi): <input type='text' name='intimidation' onChange={this.updateSkill} value={this.state.skills.intimidation} /> </div>
-                <div>Investigation (Sma): <input type='text' name='investigation' onChange={this.updateSkill} value={this.state.skills.investigation} /> </div>
+                <div>Boating (Agi): <input type='text' name='boating' onChange={this.updateSkill} defaultValue={this.state.skills.boating} /> </div>
+                <div>Climbing (Str): <input type='text' name='climbing' onChange={this.updateSkill} defaultValue={this.state.skills.climbing} /> </div>
+                <div>Driving (Agi): <input type='text' name='driving' onChange={this.updateSkill} defaultValue={this.state.skills.driving} /> </div>
+                <div>Fighting (Agi): <input type='text' name='fighting' onChange={this.updateSkill} defaultValue={this.state.skills.fighting} /> </div>
+                <div>Gambling (Sma): <input type='text' name='gambling' onChange={this.updateSkill} defaultValue={this.state.skills.gambling} /> </div>
+                <div>Healing (Sma): <input type='text' name='healing' onChange={this.updateSkill} defaultValue={this.state.skills.healing} /> </div>
+                <div>Intimidation (Spi): <input type='text' name='intimidation' onChange={this.updateSkill} defaultValue={this.state.skills.intimidation} /> </div>
+                <div>Investigation (Sma): <input type='text' name='investigation' onChange={this.updateSkill} defaultValue={this.state.skills.investigation} /> </div>
+                <div>Boating (Agi): {this.state.skills.boating} </div>
+                <div>Climbing (Str): {this.state.skills.climbing} </div>
+                <div>Driving (Agi): {this.state.skills.driving} </div>
+                <div>Fighting (Agi): {this.state.skills.fighting} </div>
+                <div>Gambling (Sma): {this.state.skills.gambling} </div>
+                <div>Healing (Sma): {this.state.skills.healing} </div>
+                <div>Intimidation (Spi): {this.state.skills.intimidation} </div>
+                <div>Investigation (Sma): {this.state.skills.investigation} </div>
+            
             </div>
         );
     }
