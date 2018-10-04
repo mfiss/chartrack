@@ -20,12 +20,13 @@ export default class SavageSkills extends Component {
         this.updateSkill = this.updateSkill.bind(this);
     }
     updateSkill(e) {
+        console.log(e);
         let target = e.target;
         let value = target.value;
-        let skillName = target.name;
+        let name = target.name;
         let skillsUpdate = {...this.state.skills}
 
-        skillsUpdate.skillName = value;
+        skillsUpdate.name = value;
         this.setState({skillsUpdate})
 
     }
@@ -34,7 +35,7 @@ export default class SavageSkills extends Component {
         return (
             <div>
                 <h2>Skills</h2>
-                <div>Boating (Agi): <input type='text' name='boating' onChange={this.updateSkill} defaultValue={this.state.skills.boating} /> </div>
+                <div>Boating (Agi): <input type='text' name='boating' onBlur={this.updateSkill} defaultValue={this.state.skills.boating} /> </div>
                 <div>Climbing (Str): <input type='text' name='climbing' onChange={this.updateSkill} defaultValue={this.state.skills.climbing} /> </div>
                 <div>Driving (Agi): <input type='text' name='driving' onChange={this.updateSkill} defaultValue={this.state.skills.driving} /> </div>
                 <div>Fighting (Agi): <input type='text' name='fighting' onChange={this.updateSkill} defaultValue={this.state.skills.fighting} /> </div>
