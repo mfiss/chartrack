@@ -6,22 +6,63 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button'
 import SavageDescription from '../component/SavageDescription';
 import SavageEdges from '../component/SavageEdges';
-import { possibleValues, attributes, description, skills } from '../customData.json';
+import { possibleValues, attributes, description, skills } from '../data/customData.json';
 
 export default class SavageSheet extends Component {
+    constructor(props) {
+        super(props);
 
-    state = {
-        attributes: attributes,
-        description: description,
-        skills: skills,
+        this.state = {
+            attributes: attributes,
+            description: description,
+            skills: skills,
+            derived: {}
+        }
+
+        this.updateAttributes = this.updateAttributes.bind(this);
+        this.updateMaxEncumberance = this.updateMaxEncumberance.bind(this);
     }
 
-    updateAttributes = e => this.setState({
-        attributes: {
-            ...this.state.attributes,
-            [e.target.name]: e.target.value
+    componentDidMount() {
+        this.updateMaxEncumberance();
+    }
+
+    updateMaxEncumberance() {
+        let newVal
+        let evalStrength = parseInt(this.state.attributes.Strength)
+        console.log('val of Strength in updateMaxEncumbrance')
+        console.log(this.state.attributes.Strength)
+
+        switch (evalStrength) {
+            case 4:
+                newVal = 20
+                break;
+            case 6:
+                newVal = 40
+                break;
+            case 8:
+                newVal = 60
+                break;
+            case 10:
+                newVal = 80
+                break;
+            case 12:
+                newVal = 100
+                break;
+            default:
+                newVal = 0
         }
-    });
+        console.log('newVal')
+        console.log(newVal)
+        this.setState({ derived: { ...this.state.derived, maxEncum: newVal } })
+
+    }
+
+    updateAttributes(e) {
+        this.setState({ attributes: { ...this.state.attributes, [e.target.name]: e.target.value } }, this.updateMaxEncumberance);
+
+    }
+
 
     updateSkills = e => this.setState({
         skills: {
@@ -57,8 +98,6 @@ export default class SavageSheet extends Component {
     };
 
     render() {
-        console.log('skills');
-        console.log(skills);
 
         return (
             <>
@@ -84,6 +123,8 @@ export default class SavageSheet extends Component {
                             updateAttributes={this.updateAttributes}
                             attributes={this.state.attributes}
                             possibleValues={possibleValues}
+                            updateMaxEncumberance={this.updateMaxEncumberance}
+
                         />
                     </Grid>
                     <Grid item xs={6}>
